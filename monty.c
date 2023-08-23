@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 	bus_t bus_instance = {NULL, NULL, NULL, 0};
-	bus_t *bus_ptr = &bus_instance;
+	bus_t *bus = &bus_instance;
 
 	char *content;
 	FILE *file;
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
-	bus.file = file;
+	bus->file = file;
 	if (!file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
@@ -34,11 +34,11 @@ int main(int argc, char *argv[])
 	{
 		content = NULL;
 		read_line = getline(&content, &size, file);
-		bus.content = content;
+		bus->content = content;
 		counter++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, counter, file, bus_ptr);
+			execute(content, &stack, counter, file, bus);
 		}
 		free(content);
 	}
@@ -52,6 +52,7 @@ return (0);
  * @stack: head linked list - stack
  * @counter: line_counter
  * @file: poiner to monty file
+ * @bus: Pointer to the program state and data carrier
  * @content: line content
  * Return: no return
  */
@@ -61,8 +62,9 @@ int execute(
 	FILE *file, bus_t *bus)
 {
 	instruction_t opst[] = {
-			{"push", f_push}, {"pall", f_pall},
-			{"addque", f_queue},
+			{"push", (void (*)(stack_t **, unsigned int)) f_push},
+			{"pall", (void (*)(stack_t **, unsigned int)) f_pall},
+			{"addque", (void (*)(stack_t **, unsigned int)) f_queue},
 			{NULL, NULL}
 			};
 
@@ -72,7 +74,7 @@ int execute(
 	op = strtok(content, " \n\t");
 	if (op && op[0] == '#')
 		return (0);
-	bus.arg = strtok(NULL, " \n\t");
+	bus->arg = strtok(NULL, " \n\t");
 	while (opst[i].opcode && op)
 	{
 		if (strcmp(op, opst[i].opcode) == 0)

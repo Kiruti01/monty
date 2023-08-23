@@ -3,13 +3,14 @@
  * f_queue - prints top
  * @head: stack head
  * @counter: line_number
+ * @bus: pntr to bus struct
  * Return: no return
 */
-void f_queue(stack_t **head, unsigned int counter)
+void f_queue(stack_t **head, unsigned int counter, bus_t *bus)
 {
 	(void)head;
 	(void)counter;
-	bus.lifi = 1;
+	bus->lifi = 1;
 }
 
 /**

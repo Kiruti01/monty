@@ -38,8 +38,7 @@ typedef struct bus_s
 	FILE *file;
 	char *content;
 	int lifi;
-}  bus_t;
-extern bus_t bus;
+} bus_t;
 
 /**
  * struct instruction_s - opcode and its function
@@ -59,7 +58,7 @@ typedef struct instruction_s
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char *clean_line(char *content);
-void f_push(stack_t **head, unsigned int number);
+void f_push(stack_t **head, unsigned int number, bus_t *bus);
 void f_pall(stack_t **head, unsigned int number);
 int execute(
 	char *content, stack_t **head, unsigned int counter,
@@ -68,6 +67,6 @@ int execute(
 void free_stack(stack_t *head);
 void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
-void f_queue(stack_t **head, unsigned int counter);
+void f_queue(stack_t **head, unsigned int counter, bus_t *bus);
 void f_stack(stack_t **head, unsigned int counter);
 #endif
