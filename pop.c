@@ -9,17 +9,17 @@
 
 void f_pop(stack_t **head, unsigned int number)
 {
-    	stack_t *top = *head;
+	stack_t *top = *head;
 
-    	if (top == NULL)
+	if (top == NULL)
     	{
 		fprintf(stderr, "L%d: Can't pop an empty stack\n", number);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
-    	}
+	}
 
-    	*head = top->next;
-    	free(top);
+	*head = top->next;
+	free(top);
 }
