@@ -3,7 +3,7 @@
  * f_sub- sustration
  * @head: stack head
  * @number: line_number
- * Return: no return
+ * Return: void
  */
 void f_sub(stack_t **head, unsigned int number)
 {
