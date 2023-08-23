@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * pf_push - add node to the stack
+ * f_push - add node to the stack
  * @head: stack head
  * @number: line_number
  * @bus: pntr to bus_t struct
