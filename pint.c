@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * pint - print the value at the top of the stack
- * @shead: stack given by main in start.c
+ * f_pint - print the value at the top of the stack
+ * @head: stack head
  * @number: amount of lines
  * Return: void
  */
