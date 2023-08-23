@@ -63,7 +63,7 @@ void f_pall(stack_t **head, unsigned int number);
 void f_pint(stack_t **head, unsigned int number);
 
 void f_queue(stack_t **head, unsigned int number);
-void f_stack(stack_t **head, char *str, unsigned int number);
+void f_stack(stack_t **head, unsigned int number);
 
 void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
