@@ -9,9 +9,9 @@
 
 void f_pop(stack_t **head, unsigned int number)
 {
-	stack_t *top = *head;
+	stack_t *h;
 
-	if (top == NULL)
+	if (*head == NULL)
 	{
 		fprintf(stderr, "L%d: Can't pop an empty stack\n", number);
 		fclose(bus.file);
@@ -20,6 +20,7 @@ void f_pop(stack_t **head, unsigned int number)
 		exit(EXIT_FAILURE);
 	}
 
-	*head = top->next;
-	free(top);
+	h = *head
+	*head = h->next;
+	free(h);
 }
