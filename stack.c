@@ -6,8 +6,9 @@
  * @number: line_number
  * Return: void
  */
-void f_stack(stack_t **head, char *str, unsigned int number)
+void f_stack(stack_t **head, unsigned int number)
 {
 	(void)head;
 	(void)number;
+	bus.lifi = 0;
 }
