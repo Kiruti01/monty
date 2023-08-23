@@ -1,14 +1,15 @@
 #include "monty.h"
 /**
- * f_pall - prints stack
+ * f_pall - prints the stack
  * @head: stack head
- * @number: num used
- * Return: num return
+ * @counter: no used
+ * @bus: ptr to bus struct
+ * Return: no return
 */
-void f_pall(stack_t **head, unsigned int number)
+void f_pall(stack_t **head, unsigned int counter, bus_t *bus)
 {
 	stack_t *h;
-	(void)number;
+	(void)counter;
 
 	h = *head;
 	if (h == NULL)

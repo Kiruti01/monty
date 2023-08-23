@@ -2,11 +2,11 @@
 /**
  * f_push - add node to the stack
  * @head: stack head
- * @number: line_number
- * @bus: pntr to bus_t struct
- * Return: num return
+ * @counter: line_number
+ * @bus: pts to bus struct
+ * Return: no return
 */
-void f_push(stack_t **head, unsigned int number, bus_t *bus)
+void f_push(stack_t **head, unsigned int counter, bus_t *bus)
 {
 	int n, j = 0, flag = 0;
 
@@ -19,13 +19,13 @@ void f_push(stack_t **head, unsigned int number, bus_t *bus)
 			if (bus->arg[j] > 57 || bus->arg[j] < 48)
 				flag = 1; }
 		if (flag == 1)
-		{ fprintf(stderr, "L%d: usage: push integer\n", number);
+		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 			fclose(bus->file);
 			free(bus->content);
 			free_stack(*head);
 			exit(EXIT_FAILURE); }}
 	else
-	{ fprintf(stderr, "L%d: usage: push integer\n", number);
+	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 		fclose(bus->file);
 		free(bus->content);
 		free_stack(*head);
