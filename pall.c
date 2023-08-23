@@ -3,7 +3,7 @@
  * f_pall - prints stack
  * @head: stack head
  * @number: num used
- * Return: no return
+ * Return: void
  */
 void f_pall(stack_t **head, unsigned int number)
 {

@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
  * @counter: line_counter
  * @file: poiner to monty file
  * @content: line content
- * Return: no return
+ * Return: void
  */
 
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
@@ -62,6 +62,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 			{"pall", f_pall},
 			{"pint", f_pint},
 			{"addque", f_queue},
+			{"stack", f_stack},
 			{NULL, NULL}
 			};
 

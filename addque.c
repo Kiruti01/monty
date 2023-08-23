@@ -3,7 +3,7 @@
  * f_queue - prints top
  * @head: stack head
  * @number: line_number
- * Return: no return
+ * Return: void
  */
 void f_queue(stack_t **head, unsigned int number)
 {
@@ -16,7 +16,7 @@ void f_queue(stack_t **head, unsigned int number)
  * addqueue - add node to tail stack
  * @n: new_value
  * @head: head of the stack
- * Return: no return
+ * Return: void
  */
 void addqueue(stack_t **head, int n)
 {
