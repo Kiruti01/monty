@@ -1,7 +1,5 @@
 #include "monty.h"
 
-bus_t bus = {NULL, NULL, NULL, 0};
-
 /**
 * main - monty code interpreter
 * @argc: num of arguments
@@ -10,6 +8,9 @@ bus_t bus = {NULL, NULL, NULL, 0};
 */
 int main(int argc, char *argv[])
 {
+	bus_t bus_instance = {NULL, NULL, NULL, 0};
+	bus_t *bus_ptr = &bus_instance;
+
 	char *content;
 	FILE *file;
 	size_t size = 0;
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
 		counter++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, counter, file);
+			execute(content, &stack, counter, file, bus_ptr);
 		}
 		free(content);
 	}
@@ -55,7 +56,9 @@ return (0);
  * Return: no return
  */
 
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int execute(
+	char *content, stack_t **stack, unsigned int counter,
+	FILE *file, bus_t *bus)
 {
 	instruction_t opst[] = {
 			{"push", f_push}, {"pall", f_pall},
