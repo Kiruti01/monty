@@ -64,6 +64,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 			{"addque", f_queue},
 			{"stack", f_stack},
 			{"pop", f_pop},
+			{"nop", f_nop},
 			{NULL, NULL}
 			};
 
