@@ -6,7 +6,7 @@
  * @number: amount of lines
  * Return: void
  */
-void pint(stack_t **head, unsigned int number)
+void f_pint(stack_t **head, unsigned int number)
 {
 	if (!head || !(*head))
 	{
