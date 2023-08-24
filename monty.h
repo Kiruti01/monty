@@ -61,6 +61,7 @@ void f_pop(stack_t **head, unsigned int number);
 void f_nop(stack_t **head, unsigned int number);
 void f_sub(stack_t **head, unsigned int number);
 void f_add(stack_t **head, unsigned int line_number);
+void f_div(stack_t **head, unsigned int number);
 
 void f_push(stack_t **head, unsigned int number);
 void f_pall(stack_t **head, unsigned int number);
