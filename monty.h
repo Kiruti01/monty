@@ -71,7 +71,7 @@ void f_stack(stack_t **head, unsigned int number);
 void f_swap(stack_t **head, unsigned int number);
 void f_rotl(stack_t **head, unsigned int number);
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int number);
-void f_mul(stack_t **head, unsigned int line_number);
+void f_mul(stack_t **head, unsigned int number);
 
 void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
