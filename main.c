@@ -70,7 +70,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 			{"sub", f_sub},
 			{"rotl", f_rotl},
 			{"rotr", f_rotr},
-			{"mul",f_mul}
+			{"mul", f_mul}
 			{NULL, NULL}
 			};
 
